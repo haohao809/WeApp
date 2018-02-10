@@ -1,4 +1,14 @@
-<view>
-	<swiper></swiper>
+<view class='poster-container'>
+	<swiper autoplay="true" interval="5000">
+    <swiper-item >
+      <image src="/images/mina.jpg"></image>
+    </swiper-item>
+      <swiper-item>
+      	<image src="/images/minh.jpg"></image>
+    </swiper-item>
+      <swiper-item>
+      	<image src="/images/minz.jpg"></image>
+    </swiper-item>
+  </swiper>
 
 </view>

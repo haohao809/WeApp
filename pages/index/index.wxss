@@ -34,3 +34,7 @@
     color: #5D88AB;
     line-height: 20px
 }
+page{
+    height: 100%;
+    background-color:#b3d4db;
+}

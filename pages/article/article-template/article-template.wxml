@@ -1,0 +1,15 @@
+<view class= 'article-container'>
+	<view class='article-date'>
+		<image class='author' src=''></image>
+		<text class='date'></text>
+	</view>
+	<text class='article-title'></text>
+	<image class='article-image'></image>
+	<text class='article-content'></text>
+	<view class='article-like'>
+		<image class='like-image'></image>
+		<text class='like-num'></text>
+		<image class='like-image'></image>
+		<text class='like-num'></text>
+	</view>
+</view>

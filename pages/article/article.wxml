@@ -1,4 +1,4 @@
-<import src='article/article-template.wxml'>
+<import src='article-template/article-template.wxml' />
 <view>
 	<swiper autoplay="true" interval="5000">
     <swiper-item >

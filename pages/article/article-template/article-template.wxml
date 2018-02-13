@@ -1,15 +1,15 @@
 <view class= 'article-container'>
 	<view class='article-date'>
-		<image class='author' src=''></image>
-		<text class='date'></text>
+		<image class='author' src='{{avatar}}'></image>
+		<text class='date'>{{date}}</text>
 	</view>
-	<text class='article-title'></text>
-	<image class='article-image'></image>
-	<text class='article-content'></text>
+	<text class='article-title'>{{title}}</text>
+	<image class='article-image'>"{{imgSrc}}"</image>
+	<text class='article-content'>{{content}}</text>
 	<view class='article-like'>
-		<image class='like-image'></image>
-		<text class='like-num'></text>
-		<image class='like-image'></image>
-		<text class='like-num'></text>
+		<image class='like-image' src="/images/icon/chat.png"></image>
+		<text class='like-num'>{{collection}}</text>
+		<image class='like-image' src="/images/icon/view.png"></image>
+		<text class='like-num'>{{reading}}</text>
 	</view>
 </view>

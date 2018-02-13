@@ -1,11 +1,11 @@
 var Data = require('../../data/article-data.js')
 Page({
-	data：{
+  data:{
 
-	}，
+  },
 	onLoad: function () {
 		this.setData({
-			postList:Data:postList
+			postList:Data.postList
 		});
 	}
 })

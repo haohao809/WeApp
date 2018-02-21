@@ -11,7 +11,7 @@
       	<image src="/images/minz.jpg"></image>
     </swiper-item>
   </swiper>
-<block wx:for="{{postList}}" wx:for-item="item" wx: for-index="idx">
+<block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
 	<view>
 		<template is="articleTemplate" data="{{...item}}"></template>
 	</view>

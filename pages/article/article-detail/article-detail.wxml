@@ -1,4 +1,4 @@
-<view class="container">
+<view class="detail-container">
 	<image class="image-head" src="{{postData.headImgSrc}}"></image>
 	<image class="auto" src="/images/music/music-stop.png"></image>
 	<view class="author-date"> 

@@ -1,0 +1,17 @@
+.detail-container{
+  display: flex;
+  flex-direction: column;
+}
+.image-head{
+  height: 460rpx;
+  width: 100%
+}
+.auto{
+  width: 102rpx;
+  height: 110rpx;
+  left: 50%;
+  margin-left: -51rpx;
+  position: absolute;
+  top: 180rpx;
+  opacity: 0.6;
+}

@@ -11,7 +11,7 @@ Page({
 	itemDetail: function(event){
 		let postId = event.currentTarget.dataset.postid;
 		wx.navigateTo({
-			url: "arcitle-detail/arcitle-detail?id=" + postId
+			url: "article-detail/article-detail?id=" + postId
 		})
 	}
-})
+}) 

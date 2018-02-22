@@ -1,0 +1,55 @@
+.article-container{
+	display: flex;
+	flex-direction: column;
+	margin-top: 20rpx;
+	margin-bottom: 40rpx;
+	background-color: #fff;
+	border-bottom: 1px solid #ededed;
+	border-top: 1px solid #ededed;
+	padding-bottom: 5px;
+}
+.article-date{
+	margin-top:10rpx;
+	margin-bottom:20rpx;
+	margin-left:10px;
+}
+.author{
+	width: 60rpx;
+	height: 60rpx;
+	vertical-align: middle;
+}
+.date{
+	font-size: 26rpx;
+	margin-bottom:10px;
+}
+.article-title{
+	font-size: 34rpx;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+.article-content{
+	color: #666;
+	font-size: 28rpx;
+	margin-bottom: 20rpx;
+	margin-left: 20rpx;
+	letter-spacing: 2rpx;
+	line-height: 40rpx;
+}
+.article-like{
+	font-size: 13px;
+	line-height: 16px;
+	margin-left: 10px;
+}
+.like-image{
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	vertical-align:  middle;
+}
+.like-num{
+	vertical-align:  middle;
+	margin-right:20px;
+
+}

@@ -4,7 +4,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/article/article"
+    "pages/article/article",
+    "pages/article/article-detail/article-detail"
   ],
   "window":{
     "backgroundTextStyle":"light",

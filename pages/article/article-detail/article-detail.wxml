@@ -1,0 +1,19 @@
+<view class="container">
+	<image class="image-head" src="{{postData.headImgSrc}}"></image>
+	<image class="auto" src="/images/music/music-stop.png"></image>
+	<view class="author-date"> 
+		<image class="avatar" src="{{postData.avatar}}"></image>
+		<text class="author"></text>
+		<text class="text"></text>
+		<text class="date"></text>
+	</view>
+	<text class="title"></text>
+	<view class="tool">
+		<view>
+			<image></image>
+			<image></image>
+		</view>
+		<view class="line"></view>
+	</view>
+	<text class="detail"></text>
+</view>

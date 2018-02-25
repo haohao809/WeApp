@@ -1,6 +1,6 @@
 <view class="detail-container">
 	<image class="image-head" src="{{postData.headImgSrc}}"></image>
-	<image class="auto" src="/images/music/music-stop.png"></image>
+	<image class="auto" src="/images/music/music-start.png"></image>
 	<view class="author-date"> 
 		<image class="avatar" src="{{postData.avatar}}"></image>
 		<text class="author">{{postData.author}}</text>
@@ -10,8 +10,8 @@
 	<text class="title">{{postData.title}}</text>
 	<view class="tool">
 		<view class="circle-img">
-			<image src="/images/icon/collection.png"></image>
-			<image></image>
+			<image wx:if="{{collected}}" catchtap="onColletionTap" src="/images/icon/collection.png"></image>
+			<image wx:else catchtap="onColletionTap" src="/images/icon/collection-anti.png"></image>
 			<image class="share-image" src="/images/icon/share.png"></image>
 		</view>
 		<view class="line"></view>

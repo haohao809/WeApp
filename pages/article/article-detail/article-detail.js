@@ -11,9 +11,11 @@ Page({
 		var postsCollected = wx.getStorageSync('posts_collected')
 		if(postsCollected){
 			var postCollected = postsCollected[postId];
-			this.setData({
+			if(postCollected){
+				this.setData({
 				collected: postCollected
 			})
+		} 
 		} else {
 			var postsCollected = {};
 			postsCollected[postId] = false;
@@ -53,4 +55,22 @@ Page({
 			icon: "success"
 		})
 	},
+	onShareTap: function(event){
+		var list = [
+			"分享到微信好友",
+			"分享到朋友圈", 
+			"分享到QQ",
+			"分享到微博"
+		];
+		wx.showActionSheet({
+			itemList: list,
+			itemColor: "#405f80",
+			success: function(res) {
+				wx.showModal({
+					title: "用户 " + list[res.tapIndex],
+					content: "用户是否取消？"
+				})
+			}
+		})
+	}
 })

@@ -1,5 +1,8 @@
 var postsData = require('../../../data/article-data.js')
 Page({
+	data: {
+		isPlayingMusic: false
+	},
 	onLoad: function(option){
 		let postId = option.id;
 		this.data.currentPostId = postId;
@@ -22,6 +25,7 @@ Page({
 			wx.setStorageSync('posts_collected',postsCollected);
 		}
 	},
+  //收藏、分享
 	onColletionTap: function (event){
 		this.getPostsCollectedAsy();
 	},
@@ -72,5 +76,28 @@ Page({
 				})
 			}
 		})
-	}
+	},
+  //音乐播放
+  onMusicTap: function(){
+  	var currentPostId = this.data.currentPostId;
+  	var data = postsData.postList[currentPostId];
+  	var isplayingMusic = this.data.isplayingMusic;
+  	if(isplayingMusic){
+  		wx.pauseBackgroundAudio();
+  		this.setData({
+  			isPlayingMusic: false
+  		})
+  	}
+  	else{
+  		wx.playBackgroundAudio({
+  			dataUrl:data.music.url,
+  			title: data.music.title,
+  			coverImgUrl: data.music.coverImg,
+  		})
+  		this.setData({
+  			isPlayingMusic: true
+  		})
+  	}
+  }
+
 })

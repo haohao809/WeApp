@@ -1,12 +1,15 @@
 var postsData = require('../../../data/article-data.js')
+var app = getApp();
 Page({
 	data: {
 		isPlayingMusic: false
 	},
 	onLoad: function(option){
-		let postId = option.id;
+		var postId = option.id;
 		this.data.currentPostId = postId;
 		let postData =  postsData.postList[postId];
+		console.log(app.globalData);
+		
 		this.setData({
 			postData: postData
 		})
@@ -24,8 +27,33 @@ Page({
 			postsCollected[postId] = false;
 			wx.setStorageSync('posts_collected',postsCollected);
 		}
+		if(app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId === postId){
+			this.setData({
+					isPlayingMusic: true
+				})
+		}
+		this.setMusicMonitor();
 	},
-  //收藏、分享
+	setMusicMonitor: function () {
+		var that = this;
+		wx.onBackgroundAudioPlay(function (event) {
+				that.setData({
+					isPlayingMusic: true
+				})
+
+			app.globalData.g_isPlayingMusic = true;
+			app.globalData.g_currentMusicPostId = that.data.currentPostId;
+		});
+		wx.onBackgroundAudioPause(function(){
+			that.setData({
+					isPlayingMusic: false
+			})
+			app.globalData.g_isPlayingMusic = false;
+			app.globalData.g_currentMusicPostId = null;
+		})
+	},
+
+  	//收藏、分享
 	onColletionTap: function (event){
 		this.getPostsCollectedAsy();
 	},
@@ -87,6 +115,7 @@ Page({
   		this.setData({
   			isPlayingMusic: false
   		})
+  		app.globalData.g_isPlayingMusic = false;
   	}
   	else{
   		wx.playBackgroundAudio({
@@ -97,6 +126,8 @@ Page({
   		this.setData({
   			isPlayingMusic: true
   		})
+  		app.globalData.g_isPlayingMusic = true;
+  		app.globalData.g_currentMusicPostId = this.data.currentPostId;
   	}
   }
 

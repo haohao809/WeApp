@@ -1,3 +1,4 @@
+<import src='like-template/like-template.wxml' />
 <template name="articleTemplate">
 <view class="article-container">
 	<view class='article-date'>
@@ -7,11 +8,14 @@
 	<text class='article-title'>{{title}}</text>
 	<image class='article-image' src="{{imgSrc}}"></image>
 	<text class='article-content'>{{content}}</text>
-	<view class='article-like'>
+<!-- 	<view class='article-like'>
 		<image class='like-image' src="/images/icon/chat.png"></image>
 		<text class='like-num'>{{collection}}</text>
 		<image class='like-image' src="/images/icon/view.png"></image>
 		<text class='like-num'>{{reading}}</text>
+	</view> -->
+	<view>
+		<template is='likeTemplate' data='{{collection,reading}}'></template>
 	</view>
 </view>
 </template>

@@ -52,7 +52,7 @@ Page({
     })
   },
   onTap: function(e){
-    wx.redirectTo({
+    wx.navigateTo({
       url: "../article/article"
     })
   }

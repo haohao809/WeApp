@@ -32,6 +32,23 @@ Page({
 			wx.setStorageSync('article_num',articleReadNum);
 		}
 	},
+	//页面跳转 
+	onShow: function() {
+		var articleReadNum = wx.getStorageSync('article_num')
+		if(articleReadNum){
+			for(var j=0; j<Data.postList.length;j++){
+				for(var o in articleReadNum){
+					if(parseInt(o) === Data.postList[j].postId){
+						this.data.postList[o].reading = articleReadNum[o]
+						this.setData({
+							postList:this.data.postList
+						});	
+					  // console.log('this.data.postList[o].reading',this.data.postList[o].reading) 					
+					}
+				}
+			}
+		}	
+	},
 	itemDetail: function(event){
 		console.log(this.postId);
 		this.postId = event.currentTarget.dataset.postid;

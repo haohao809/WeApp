@@ -1,0 +1,16 @@
+.article-like{
+	font-size: 13px;
+	line-height: 16px;
+	margin-left: 10px;
+}
+.like-image{
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	vertical-align:  middle;
+}
+.like-num{
+	vertical-align:  middle;
+	margin-right:20px;
+
+}

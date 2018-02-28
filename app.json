@@ -3,11 +3,30 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/article/article",
-    "pages/article/article-detail/article-detail"
+    "pages/article/article-detail/article-detail",
+    "pages/movies/movies"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"white"
+  },
+    "tabBar": {
+    "borderStyle": "white",
+    "position":"bottom", 
+    "list": [
+      {
+        "pagePath": "pages/article/article",
+        "text": "阅读",
+        "iconPath": "images/tab/yuedu.png",
+        "selectedIconPath": "images/tab/yuedu_hl.png"
+      },
+      {
+        "pagePath": "pages/movies/movies",
+        "text": "电影",
+        "iconPath": "images/tab/dianying.png",
+        "selectedIconPath": "images/tab/dianying_hl.png"
+      } 
+    ]
   }
 }

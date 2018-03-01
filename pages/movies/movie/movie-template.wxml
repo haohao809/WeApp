@@ -1,0 +1,9 @@
+<import src='../stars/stars-template.wxml'/>
+<template name="movieTemplate">
+	<view class="movie-container">
+		<image src="/images/iqiyi.png"></image>
+		<text>爱奇艺</text>
+		<template is="starsTemplate"></template>
+	</view>
+</template>
+	

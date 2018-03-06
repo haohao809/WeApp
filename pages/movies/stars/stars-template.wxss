@@ -7,6 +7,7 @@
 	flex-direction: row;
 	height: 17rpx;
 	margin-right: 24rpx;
+	margin-top: 6rpx
 }
 .stars image{
 	height: 17rpx;

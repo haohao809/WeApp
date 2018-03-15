@@ -1,9 +1,9 @@
 <import src='../stars/stars-template.wxml'/>
 <template name="movieTemplate">
 	<view class="movie-container">
-		<image src="/images/iqiyi.png" class='movie-img'></image>
-		<text class='movie-text'>爱奇艺</text>
-		<template is="starsTemplate"></template>
+		<image src="{{img}}" class='movie-img'></image>
+		<text class='movie-text'>{{title}}</text>
+		<template is="starsTemplate" data="{{score}}"></template>
 	</view>
 </template>
 	

@@ -13,7 +13,21 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-
+const changeStar = stars =>{
+	let num = stars.toString().slice(0,1);
+	let arr = [];
+	console.log('num',num);
+	for(let i=1;i<=5;i++){
+		if(i<=num){
+			arr.push(1);
+		}else{
+			arr.push(0);
+		}
+	}
+	console.log(arr);
+	return arr
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  changeStar: changeStar
 }

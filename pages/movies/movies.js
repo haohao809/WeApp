@@ -1,13 +1,18 @@
-
+const util = require('../../utils/util.js')
 let app = getApp(); 
 Page({
+	data:{
+		inTheaters: {},
+		comingSoon: {},
+		top250: {}
+	},
 	onLoad: function (event) {
 		let inTheatersUrl = app.globalData.doubanBase +"/v2/movie/in_theaters" + "?start=0&count=3";
     	let comingSoonUrl = app.globalData.doubanBase +"/v2/movie/coming_soon" + "?start=0&count=3";
 		let top250Url = app.globalData.doubanBase + "/v2/movie/top250" + "?start=0&count=3";
 		this.getMovieListData(inTheatersUrl,"inTheaters","正在热映");
-//		this.getMovieListData(comingSoonUrl,"comingSoon","即将上映");
-//		this.getMovieListData(top250Url, "top250","豆瓣Topic50");
+		this.getMovieListData(comingSoonUrl,"comingSoon","即将上映");
+		this.getMovieListData(top250Url, "top250","豆瓣Topic50");
 		
 		
 	},
@@ -21,7 +26,7 @@ Page({
 			},
 			success: function(res){
 				console.log(res);
-				that.handleData(res.data);
+				that.handleData(res.data,settedKey);
 			},
 			fail: function(error){
 
@@ -30,7 +35,7 @@ Page({
 
 		})
 	},
-	handleData(data){
+	handleData(data,key){
 		let list = data.subjects;
 		let movies = [];
 		let title;
@@ -39,6 +44,7 @@ Page({
 				title = item.title.substring(0,6)+"...";
 			}
 			let obj = {
+				stars: util.changeStar(item.rating.stars),
 				title: title,
 				img: item.images.large,
 				score: item.rating.average,
@@ -47,9 +53,11 @@ Page({
 			movies.push(obj);			
 		}
 		console.log('movies',movies);
-		this.setData({
-			movies:movies
-		})
+		let readyData ={};
+		readyData[key] = {
+			movies: movies
+		};
+		this.setData(readyData);
 	}
 
 	

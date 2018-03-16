@@ -1,6 +1,5 @@
 <import src="../movie/movie-template.wxml"/>
 <template name="movieListTemplate">
-	
 	<view class="movie-list-container">
 		<view class="inner">
 		<view class='head'>

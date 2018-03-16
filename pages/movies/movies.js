@@ -12,7 +12,7 @@ Page({
 		let top250Url = app.globalData.doubanBase + "/v2/movie/top250" + "?start=0&count=3";
 		this.getMovieListData(inTheatersUrl,"inTheaters","正在热映");
 		this.getMovieListData(comingSoonUrl,"comingSoon","即将上映");
-		this.getMovieListData(top250Url, "top250","豆瓣Topic50");
+		this.getMovieListData(top250Url, "top250","豆瓣Topic250");
 		
 		
 	},
@@ -26,7 +26,7 @@ Page({
 			},
 			success: function(res){
 				console.log(res);
-				that.handleData(res.data,settedKey);
+				that.handleData(res.data,settedKey,Title);
 			},
 			fail: function(error){
 
@@ -35,7 +35,7 @@ Page({
 
 		})
 	},
-	handleData(data,key){
+	handleData(data,key,titleName){
 		let list = data.subjects;
 		let movies = [];
 		let title;
@@ -55,7 +55,8 @@ Page({
 		console.log('movies',movies);
 		let readyData ={};
 		readyData[key] = {
-			movies: movies
+			movies: movies,
+			titleName: titleName
 		};
 		this.setData(readyData);
 	}

@@ -24,7 +24,7 @@ const changeStar = stars =>{
 			arr.push(0);
 		}
 	}
-	console.log(arr);
+//	console.log(arr);
 	return arr
 }
 module.exports = {

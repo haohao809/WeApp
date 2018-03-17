@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    navigateTitle: ""
   },
 
   /**
@@ -13,14 +13,20 @@ Page({
    */
   onLoad: function (options) {
     let name = options.titleName;
+    this.data.navigateTitle = name;
     console.log(name);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function (event) {
+      wx.setNavigationBarTitle({
+        title:  this.data.navigateTitle,
+        success: function(res) {
+
+        }
+      })
   },
 
   /**

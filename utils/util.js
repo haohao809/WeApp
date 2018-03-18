@@ -27,7 +27,23 @@ const changeStar = stars =>{
 //	console.log(arr);
 	return arr
 }
+function http(url,callback){
+	wx.request({
+		url:url,
+		method: 'GET',
+		header:{
+			"Content-Type": "json"
+		},
+		success: function(res){
+			callback(res)
+		},
+		fail: function(error){
+			console.log(error)
+		}
+	})
+}
 module.exports = {
   formatTime: formatTime,
-  changeStar: changeStar
+  changeStar: changeStar,
+  http: http
 }

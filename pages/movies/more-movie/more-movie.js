@@ -1,4 +1,6 @@
 // pages/movies/more-movie/more-movie.js
+let app = getApp()
+let util = require('../../../utils/util.js')
 Page({
 
   /**
@@ -15,6 +17,19 @@ Page({
     let name = options.titleName;
     this.data.navigateTitle = name;
     console.log(name);
+    let url = "";
+    switch(name){
+      case "正在热映":
+      url = app.globalData.doubanBase + '/v2/movie/in_theaters';
+      break;
+      case "即将上映":
+      url = app.globalData.doubanBase + '/v2/movie/coming_soon';
+      break;
+      case "豆瓣Topic250":
+      url = app.globalData.doubanBase + '/v2/movie/top250'
+      break;
+    }
+    util.http(url,this.callback)
   },
 
   /**
@@ -69,5 +84,27 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  callback(res){
+    console.log(res);
+    let list = res.data.subjects;
+    console.log(list);
+    let movies = [];
+    let title;
+    for(let item of list){
+      if(item.title.length>=6){
+        title = item.title.substring(0,6)+"...";
+      }
+      let obj = {
+        stars: util.changeStar(item.rating.stars),
+        title: title,
+        img: item.images.large,
+        score: item.rating.average,
+        movieId: item.id
+      }
+      movies.push(obj);     
+    }
+    console.log('movies',movies);
+    this.setData({movies:movies});
   }
 })

@@ -7,7 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navigateTitle: ""
+    navigateTitle: "",
+    movies: [],
+    totalCount: 0,
+    flag : true,
+    reqUrl: '',
   },
 
   /**
@@ -29,6 +33,7 @@ Page({
       url = app.globalData.doubanBase + '/v2/movie/top250'
       break;
     }
+    this.data.reqUrl = url;
     util.http(url,this.callback)
   },
 
@@ -104,7 +109,23 @@ Page({
       }
       movies.push(obj);     
     }
+ 
     console.log('movies',movies);
-    this.setData({movies:movies});
+    let totalMovies = [];
+    if(!this.data.flag){
+    	 totalMovies = this.data.movies.concat(movies);
+    }else{
+    	 totalMovies = movies;
+    	 this.data.flag = false;
+    }
+    this.setData({movies:totalMovies});
+    this.data.totalCount += 20;
+    console.log(this.data.totalCount);
+    
+  },
+  onScroll(event){
+  	 console.log('scroll');
+  	 let nextUrl =  this.data.reqUrl + '?start=' + this.data.totalCount + '&count=20';
+  	 util.http(nextUrl,this.callback)
   }
 })

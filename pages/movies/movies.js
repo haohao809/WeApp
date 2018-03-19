@@ -59,6 +59,12 @@ Page({
 			titleName: titleName
 		};
 		this.setData(readyData);
+	},
+	onMoreTap(event){
+		var titleName = event.currentTarget.dataset.titlename;
+		wx.navigateTo({
+			url: "more-movie/more-movie?titleName=" + titleName
+		})
 	}
 
 	

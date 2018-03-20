@@ -16,7 +16,7 @@ const formatNumber = n => {
 const changeStar = stars =>{
 	let num = stars.toString().slice(0,1);
 	let arr = [];
-	console.log('num',num);
+//	console.log('num',num);
 	for(let i=1;i<=5;i++){
 		if(i<=num){
 			arr.push(1);

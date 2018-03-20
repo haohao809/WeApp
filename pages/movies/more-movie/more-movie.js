@@ -122,12 +122,29 @@ Page({
     }
     this.setData({movies:totalMovies});
     this.data.totalCount += 20;
+    wx.hideNavigationBarLoading();
     console.log(this.data.totalCount);
     
   },
-  onScroll(event){
-  	 console.log('scroll');
-  	 let nextUrl =  this.data.reqUrl + '?start=' + this.data.totalCount + '&count=20';
-  	 util.http(nextUrl,this.callback)
+//onScroll(event){
+//	 console.log('scroll');
+//	 let nextUrl =  this.data.reqUrl + '?start=' + this.data.totalCount + '&count=20';  	
+//	 util.http(nextUrl,this.callback);
+//	  wx.showNavigationBarLoading();
+//	 
+//},
+	onReachBottom(event){
+		 let nextUrl =  this.data.reqUrl + '?start=' + this.data.totalCount + '&count=20';  	
+	 	 util.http(nextUrl,this.callback);
+	   wx.showNavigationBarLoading();
+	},
+  onPullDownRefresh(event){
+  	console.log('pullDown');
+  	let topUrl =  this.data.reqUrl + '?start=0&count=20';
+  	this.data.movies = [];
+  	this.data.flag = true;
+  	util.http(topUrl,this.callback);
+  	wx.showNavigationBarLoading();
+  	
   }
 })

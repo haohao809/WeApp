@@ -1,4 +1,8 @@
 <import src="movie-list/movie-list-template.wxml"/>
+<view class="search">
+	<icon type="search" class="img-search" size="13" color="#405f80"></icon>
+	<input type="text" placeholder="环太平洋2" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur"/>
+</view>
 <view class="movie-total-container">
 	<view class="movies-template">
 		<template is="movieListTemplate" data="{{...inTheaters}}"></template>

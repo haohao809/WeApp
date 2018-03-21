@@ -5,3 +5,19 @@
 .movie-total-container{
 	background-color: #f2f2f2;
 }
+.search{
+	background-color: #f2f2f2;
+	height: 80rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: row;	
+}
+.img-search{
+	margin:auto 0 auto 20rpx;
+}
+.search input{
+	height: 100%;
+	width: 600rpx;
+	margin-left: 20rpx;
+	font-size: 28rpx;
+}

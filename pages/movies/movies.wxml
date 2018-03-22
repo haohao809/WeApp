@@ -2,8 +2,9 @@
 <view class="search">
 	<icon type="search" class="img-search" size="13" color="#405f80"></icon>
 	<input type="text" placeholder="环太平洋2" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur"/>
+	<icon type="cancel"  wx:if="{{searchPanelShow}}" class="img-cancel" size="16" color="#405f80" catchtap="cancelSearch"></icon>
 </view>
-<view class="movie-total-container">
+<view class="movie-total-container" wx:if="{{containerShow}}">
 	<view class="movies-template">
 		<template is="movieListTemplate" data="{{...inTheaters}}"></template>
 	</view>
@@ -13,4 +14,7 @@
 	<view class="movies-template">
 		<template is="movieListTemplate" data="{{...top250}}"></template>
 	</view>
+</view>
+<view class="search_panel" wx:if="{{searchPanelShow}}">
+	<template is="movieGridTemplate"></template>
 </view>

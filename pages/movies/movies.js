@@ -4,7 +4,10 @@ Page({
 	data:{
 		inTheaters: {},
 		comingSoon: {},
-		top250: {}
+		top250: {},
+		containerShow: true,
+		searchPanelShow: false
+
 	},
 	onLoad: function (event) {
 		let inTheatersUrl = app.globalData.doubanBase +"/v2/movie/in_theaters" + "?start=0&count=3";
@@ -65,6 +68,21 @@ Page({
 		wx.navigateTo({
 			url: "more-movie/more-movie?titleName=" + titleName
 		})
+	},
+	onBindFocus(event){
+		this.setData({
+			containerShow: false,
+			searchPanelShow: true,
+		})
+	},
+	onBindBlur(event){
+		this.setData({
+			containerShow: true,
+			searchPanelShow: false,
+		})
+	},
+	cancelSearch(event){
+		
 	}
 
 	

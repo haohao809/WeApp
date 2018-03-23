@@ -1,7 +1,8 @@
 <import src="movie-list/movie-list-template.wxml"/>
+<import src="movie-grid/movie-grid-template.wxml"/>
 <view class="search">
 	<icon type="search" class="img-search" size="13" color="#405f80"></icon>
-	<input type="text" placeholder="环太平洋2" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur"/>
+	<input type="text" placeholder="环太平洋2" placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindConfirm"/>
 	<icon type="cancel"  wx:if="{{searchPanelShow}}" class="img-cancel" size="16" color="#405f80" catchtap="cancelSearch"></icon>
 </view>
 <view class="movie-total-container" wx:if="{{containerShow}}">
@@ -16,5 +17,5 @@
 	</view>
 </view>
 <view class="search_panel" wx:if="{{searchPanelShow}}">
-	<template is="movieGridTemplate"></template>
+	<template is="movieGridTemplate" data="{{...searchResult}}"></template>
 </view>

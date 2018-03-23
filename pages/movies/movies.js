@@ -4,6 +4,7 @@ Page({
 	data:{
 		inTheaters: {},
 		comingSoon: {},
+		searchResult: {},
 		top250: {},
 		containerShow: true,
 		searchPanelShow: false
@@ -75,14 +76,17 @@ Page({
 			searchPanelShow: true,
 		})
 	},
-	onBindBlur(event){
+	onBindConfirm(event){
+
+		let  text = event.detail.value;
+		let  searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
+		this.getMovieListData(searchUrl,"searchResult","");
+	},
+	cancelSearch(event){
 		this.setData({
 			containerShow: true,
 			searchPanelShow: false,
 		})
-	},
-	cancelSearch(event){
-		
 	}
 
 	

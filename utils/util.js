@@ -42,8 +42,28 @@ function http(url,callback){
 		}
 	})
 }
+function convertToCastString(list){
+	let arr = []
+	list.forEach((item)=>{
+		arr.push(item.name);
+	})
+	return arr.join('/')
+}
+function convertToCastInfos(list){
+	let arrInfo = [];
+	list.forEach((item) => {
+		let cast = {
+			img: item.avatar ? item.avatar.large : '',
+			name: item.name
+		}
+		arrInfo.push(cast);
+	})
+	return arrInfo
+}
 module.exports = {
   formatTime: formatTime,
   changeStar: changeStar,
-  http: http
+  http: http,
+  convertToCastString: convertToCastString,
+  convertToCastInfos: convertToCastInfos
 }

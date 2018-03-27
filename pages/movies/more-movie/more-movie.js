@@ -143,6 +143,7 @@ Page({
   	let topUrl =  this.data.reqUrl + '?start=0&count=20';
   	this.data.movies = [];
   	this.data.flag = true;
+  	this.data.totalCount = 0;
   	util.http(topUrl,this.callback);
   	wx.showNavigationBarLoading();
   	

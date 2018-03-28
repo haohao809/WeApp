@@ -118,6 +118,10 @@
 	margin-right: 40rpx;
 	text-align: center;
 }
+.cast-imgs{
+	white-space:nowrap;
+}
+
 .cast-img{
 	width: 170rpx;
 	height: 210rpx;

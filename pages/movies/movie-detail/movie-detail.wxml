@@ -1,4 +1,4 @@
-<import src="..stars/stars-template.wxml" />
+<import src="../stars/stars-template.wxml" />
 <view class="detail-container">
 		<image class="head-img" src="{{movie.movieImg}}" mode="aspectFill"></image>
 		<view class="head-img-hover">
@@ -18,8 +18,9 @@
 					条评论
 				</text>
 			</view>
-			<image class="movie-img" src="{{movie.movieImg}}"></image>
-			<view class="summary">
+		</view>
+		<image class="movie-img" src="{{movie.movieImg}}"></image>
+		<view class="summary">
 				<view class="original-tilte">
 					<text>{{movie.originalTitle}}</text>
 				</view>
@@ -47,14 +48,15 @@
 			</view>
 			<view class="hr"></view>
 			<view class="cast">
+				<text class="cast-font">影人</text>
 				<scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
 					<block wx:for="{{movie.castsInfo}}" wx:for-item="item">
 						<view class="cast-container">
-							<image class="cast-img" src="item.img"></image>
+							<image class="cast-img" src="{{item.img}}"></image>
 							<text class="cast-name">{{item.name}}</text>
 						</view>
 					</block>
 				</scroll-view>
 			</view>
-		</view>
+		
 	</view>

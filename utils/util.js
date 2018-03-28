@@ -53,7 +53,7 @@ function convertToCastInfos(list){
 	let arrInfo = [];
 	list.forEach((item) => {
 		let cast = {
-			img: item.avatar ? item.avatar.large : '',
+			img: item.avatars ? item.avatars.large : '',
 			name: item.name
 		}
 		arrInfo.push(cast);

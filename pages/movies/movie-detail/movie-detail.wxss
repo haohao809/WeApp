@@ -1,4 +1,5 @@
 /* pages/movies/movie-detail/movie-detail.wxss */
+@import '../stars/stars-template.wxss'; 
 .detail-container{
 	display: flex;
 	flex-direction: column;
@@ -9,7 +10,7 @@
 	filter: blur(20px);
 }
 .head-img-hover{
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -51,5 +52,73 @@
 .movie-img{
 	width: 175rpx;
 	height: 238rpx;
-	float: right;
+	position: absolute;
+	top: 160rpx;
+	right: 30rpx;
+}
+.summary{
+	margin-top: 80rpx;
+	margin-left: 40rpx;
+	color: #777777;
+}
+.original-tilte{
+	color: #0000;
+	font-size: 24rpx;
+	font-weight: bold;
+	margin-bottom: 40rpx;
+}
+.flex-row{
+	display: flex;
+	flex-direction: row;
+	margin-right: 10rpx;
+}
+.mark{
+	color: #9999;
+	margin-right: 30rpx;
+	white-space: nowrap;
+	margin-bottom: 10rpx;
+}
+.hr{
+	height: 1px;
+	width: 100%;
+	margin-top:45rpx;
+	background-color: #d9d9d9;
+}
+.synopsis{
+	display: flex;
+	flex-direction: column;
+	margin-top: 50rpx;
+	margin-left: 40rpx;
+}
+.synopsis-font{
+	color: #999;
+}
+.summary-content{
+	margin-top: 20rpx;
+	margin-right: 40rpx;
+	line-height: 40rpx;
+	letter-spacing: 1px;
+	
+}
+.cast{
+	display: flex;
+	flex-direction:column;
+	margin-left: 40rpx;
+	margin-top: 50rpx;	
+}
+.cast-font{
+	color: #9999;
+	margin-bottom: 40rpx;
+}
+.cast-container{
+	display: inline-flex;
+	flex-direction: column;
+	width:170rpx;
+	margin-bottom: 50rpx;
+	margin-right: 40rpx;
+	text-align: center;
+}
+.cast-img{
+	width: 170rpx;
+	height: 210rpx;
 }

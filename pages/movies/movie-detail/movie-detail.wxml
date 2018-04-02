@@ -19,7 +19,7 @@
 				</text>
 			</view>
 		</view>
-		<image class="movie-img" src="{{movie.movieImg}}"></image>
+		<image class="movie-img" src="{{movie.movieImg}}" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg"></image>
 		<view class="summary">
 				<view class="original-tilte">
 					<text>{{movie.originalTitle}}</text>

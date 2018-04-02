@@ -42,10 +42,12 @@ Page({
 	handleData(data,key,titleName){
 		let list = data.subjects;
 		let movies = [];
-		let title;
+		let title = '';
 		for(let item of list){
 			if(item.title.length>=6){
 				title = item.title.substring(0,6)+"...";
+			}else{
+				title = item.title;
 			}
 			let obj = {
 				stars: util.changeStar(item.rating.stars),

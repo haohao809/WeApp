@@ -116,8 +116,9 @@ Page({
   onMusicTap: function(){
   	var currentPostId = this.data.currentPostId;
   	var data = postsData.postList[currentPostId];
-  	var isplayingMusic = this.data.isplayingMusic;
-  	if(isplayingMusic){
+  	var isPlayingMusic = this.data.isPlayingMusic;
+  	console.log(isPlayingMusic);
+  	if(isPlayingMusic){
   		wx.pauseBackgroundAudio();
   		this.setData({
   			isPlayingMusic: false
